@@ -395,7 +395,7 @@ function renderCursoTable(el,groups){
   if(!groups.length){ el.innerHTML='<div class="hint">Sem dados no filtro.</div>'; return; }
   const cell=(num,den,mlabel)=>{
     const inner = !den ? '<span class="cempty">—</span>'
-      : (()=>{const r=num/den*100;return `<div class="cmetric"><div class="track"><div class="fill" style="width:${r.toFixed(1)}%;background:${ADMIT}"></div></div><span class="val">${Math.round(r)}%</span></div>`;})();
+      : (()=>{const r=num/den*100;return `<div class="cmetric"><div class="track"><div class="fill" style="width:${r.toFixed(1)}%;background:${ADMIT}"></div></div><span class="val">${fmt(num)}</span></div>`;})();
     return `<div><span class="mlabel">${mlabel}</span>${inner}</div>`;
   };
   const head=`<div class="chead"><span>Curso</span><span>Alunos</span><span>Cursando · admitidos</span><span>Concluído · admitidos</span></div>`;
